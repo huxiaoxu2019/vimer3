@@ -10,4 +10,4 @@ My dot-vimrc file
 - mv dot-vim ~/.vim
 - vim
 - :PluginInstall
-- Modify the Plugin Settings in ~/.vimrc
+- Modify the `Plugin Settings` in ~/.vimrc
