@@ -33,6 +33,9 @@ Plugin 'bufexplorer.zip'
 " The NERD Tree Plutin
 Plugin 'The-NERD-tree'
 
+" Fuzzy file, buffer, mru, tag, etc finder
+Plugin 'kien/ctrlp'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -54,7 +57,7 @@ map <C-H> :BufExplorer<CR>
 " The NERD Tree Settings
 map <C-K> :NERDTreeToggle<CR>
 map <C-F> <C-W>h
-" autocmd VimEnter * nested :NERDTreeToggle
+autocmd VimEnter * nested :NERDTreeToggle
 
 " ==========================================================
 "                          基础设置
@@ -142,7 +145,7 @@ set statusline=%F%m%r%h%w\ [POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")
 " ========
 
 " 光标遇到圆括号、方括号、大括号时，自动高亮对应的另一个圆括号、方括号和大括号
-set showmatch
+" set showmatch
 
 " 搜索时，高亮显示匹配结果
 set hlsearch
