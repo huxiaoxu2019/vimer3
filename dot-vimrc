@@ -224,6 +224,9 @@ nnoremap <Down> :echomsg "Use j"<cr>
 nnoremap <Left> :echomsg "Use h"<cr>
 nnoremap <Right> :echomsg "Use l"<cr>
 
+" 复制
+map "+y :w !pbcopy<CR><CR>
+
 " ========
 " 常用文档
 " ========
