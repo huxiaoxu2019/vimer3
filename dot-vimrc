@@ -227,6 +227,12 @@ nnoremap <Right> :echomsg "Use l"<cr>
 " 复制
 map "+y :w !pbcopy<CR><CR>
 
+" hide line number
+nnoremap hrn :set nonu<CR>:set nornu<CR>
+
+" show line number
+nnoremap srn :set nu<CR>:set rnu<CR>
+
 " ========
 " 常用文档
 " ========
