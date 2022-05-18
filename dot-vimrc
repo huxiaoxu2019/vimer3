@@ -59,7 +59,7 @@ filetype plugin indent on    " required
 map <C-H> :BufExplorer<CR>
 
 " The NERD Tree Settings
-map <C-K> :NERDTreeToggle<CR>
+map <C-K> :NERDTreeToggle<CR>:vertical resize 50<CR>
 map <C-F> <C-W>h
 " autocmd VimEnter * nested :NERDTreeToggle
 
