@@ -39,11 +39,14 @@ Plugin 'kien/ctrlp.vim'
 " Auto completion
 Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 
+" Augment.vim, ai context-aware code completion
+Plugin 'augmentcode/augment.vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
-"filetype plugin on
+filetype plugin on
 "
 " Brief help
 " :PluginList       - lists configured plugins
@@ -71,6 +74,7 @@ set encoding=utf-8
 " 启用256色
 set t_Co=256
 
+" 自定义 leader key
 let mapleader = ","
 
 " ========
@@ -103,7 +107,7 @@ set number
 set relativenumber
 
 " 光标所在的当前行高亮
-" set cursorline
+set cursorline
 
 " 设置行宽，即一行显示多少个字符
 " set textwidth=80
@@ -132,6 +136,16 @@ set statusline=%F%m%r%h%w\ [POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")
 
 " 在状态栏显示光标的当前位置（位于哪一行哪一列）
 " set ruler
+
+" 启用不同模式下的光标形状（适用于支持的终端）
+" let &t_SI = "\e[6 q"   " 插入模式下，光标变成竖线
+" let &t_EI = "\e[2 q"   " 普通模式下，光标变回方块
+
+" hide line number
+nnoremap hrn :set nonu<CR>:set nornu<CR>
+
+" show line number
+nnoremap srn :set nu<CR>:set rnu<CR>
 
 " ========
 " 搜索设置
@@ -193,7 +207,7 @@ set noerrorbells
 " set visualbell
 
 " Vim 需要记住多少次历史操作
-set history=1000
+set history=3000
 
 " 打开文件监视。如果在编辑过程中文件发生外部改变（比如被别的编辑器编辑了），就会发出提示
 set autoread
@@ -214,13 +228,7 @@ nnoremap <Left> :echomsg "Use h"<cr>
 nnoremap <Right> :echomsg "Use l"<cr>
 
 " 复制
-map "+y :w !pbcopy<CR><CR>
-
-" hide line number
-nnoremap hrn :set nonu<CR>:set nornu<CR>
-
-" show line number
-nnoremap srn :set nu<CR>:set rnu<CR>
+map Yy :w !pbcopy<CR><CR>
 
 " ========
 " 常用文档
@@ -402,3 +410,12 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 " === CoC NVim End ===
+
+" === Augment Start ===
+let g:augment_workspace_folders = ['/Users/xu_hu/Developer/huxiaoxu/repos/algorithm']
+nnoremap <leader>ac :Augment chat<CR>
+vnoremap <leader>ac :Augment chat<CR>
+nnoremap <leader>an :Augment chat-new<CR>
+nnoremap <leader>at :Augment chat-toggle<CR>
+" === Augment End ===
+
